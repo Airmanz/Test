@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人博客</title>
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<div id="container">
+
+  <div id="top">
+  		<ul>
+        <li class="tdwidth"><a href="register.html">注册</a></li>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">搜索</a></li>
+        <li><a href="#">留言</a></li>
+        <li><a href="photo.html">相册</a></li>
+        <li><a href="blog.html">首页</a></li>    
+        <li class="liTime" id="time"></li>     
+      </ul>  
+  </div>
+  
+  <div id="main">
+<div class="left">
+    <div>
+    <p>&nbsp;</p>
+      <p align="center" class="wenzi">那一年冬天的BLOG</p>
+      <p>&nbsp; </p>
+      <div id="show" class="wenzi"></div>
+      <p>&nbsp; </p>
+    </div>
+    <div>
+    	<div>
+    	  <p class="kuang">搜索BLOG文章</p>
+    	  <p>&nbsp;</p>
+    	</div>
+        <div align="center">
+          <p>
+            <input name="" type="text" class="zi" value="请输入关键字" />
+          </p>
+          <p>&nbsp; </p>
+          <div align="right">
+            <p><img src="images/searchBtn.jpg" width="63" height="21" /></p>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+    </div>
+    
+<div>
+    
+    <div>
+    <p class="kuang">博客基本信息</p>
+    <p>&nbsp;</p>
+    </div>
+    <p align="center" class="wenzi">
+    用户名：那一年冬天<br/>
+    等&nbsp;&nbsp;&nbsp;&nbsp;级：初来乍到<br />
+    威&nbsp;&nbsp;&nbsp;&nbsp;望:10<br />
+    金&nbsp;&nbsp;&nbsp;&nbsp;钱：25<br />
+    在线时间：714分钟<br />
+    日志总数：6<br />
+	评论数量：4<br />
+	访问次数：118<br />
+	建立时间：2006-07-14<br />
+    </p>
+    <p>&nbsp;</p>
+  </div>
+    
+  <div>
+    <p class="kuang">友情链接</p>
+    </div>
+    
+</div>
+
+    <div class="center"><img src="images/line.jpg" width="1" height="741" /></div>
+    <div class="right">
+      <div class="paddingleft">
+        <p class="wb">旅途风光</p>
+        <p><img src="images/scenery1.jpg" width="500" height="200" /></p>
+      </div>
+      
+      <div>
+        <p class="wb">上海老街印象</p>
+        <p align="right">2011-01-28 18:16</p>
+        <p class="lineHeight">上海老街，又称小东门，这里曾是100年前上海开埠后最早灯火辉煌、万商云集的地方，地处上海市黄浦区老城厢，也就是小东门城门所在地。由于历史原因，城门没有被保留下来，但是老城厢环城的9扇门至今仍深深刻在上海人民心中。上海老街所在的小东门地区，原是上海对外贸易、小商品交易的重要场地，见证了上海的经济社会发展。</p>
+        <p align="right"><a href="" class="lianjie">阅读全文(27)</a> | <a href="" class="lianjie">回复(0)</a> | <a href="" class="lianjie">推送</a></p>
+      </div>
+      
+      <div>
+      <p class="wb">苏州游记之山塘</p>
+      <p align="right">2011-02-20 12:42</p>
+      <p class="lineHeight">山塘街位于古城苏州的西北部，东连红尘中一二等富贵风流之地阊门，西接吴中第一名胜虎丘，全长3600米，因此被称作七里山塘。山塘街始建于公元825年，为唐朝大诗人白居易来苏州担任刺史时所建。有民歌唱到上有天堂，下有苏杭。杭州有西湖，苏州有山塘。两处好地方，无限好风光。这便是对山塘街的生动写照。</p>
+      <p align="right" ><a href="" class="lianjie">阅读全文(19)</a> | <a href="" class="lianjie">回复(0)</a> | <a href="" class="lianjie">推送</a></p>
+      </div>
+</body>
+
+<script type="text/javascript">
+var day = 0, month = 0 , year = 0;
+n = new Date();
+day=n.getDay();
+date=n.getDate();
+year = n.getFullYear();//年
+month = n.getMonth()+1;//月
+var date = new Date();
+date.setDate(1); //获取每月的第一天
+firstday = date.getDay();
+switch(month){
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12: day = 31;break;
+	
+	case 4:
+	case 6:
+	case 9:
+	case 11:day = 30;break;
+	
+	case 2:
+	if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
+		day = 29;break;
+	}
+	else{
+		day = 28;break;
+	}
+}
+diwen = n.getDate();
+var whilt = parseInt(firstday);
+
+	var htmlstr="<table border='0' align=center>";
+	htmlstr+="</tr>";
+	htmlstr+="<td>日&nbsp;</td>";
+	htmlstr+="<td>一&nbsp;</td>";
+	htmlstr+="<td>二&nbsp;</td>";
+	htmlstr+="<td>三&nbsp;</td>";
+	htmlstr+="<td>四&nbsp;</td>";
+	htmlstr+="<td>五&nbsp;</td>";
+	htmlstr+="<td>六&nbsp;</td>";
+	htmlstr+="</tr>";
+	htmlstr+="<tr>";
+	for(var j = 0; j < whilt;j++)
+		{
+			htmlstr+="<td></td>"; 
+		}
+	for (var d = 1; d <= day; d++) {
+		var i = 1;
+		if(d==8-whilt||d==15-whilt||d==22-whilt||d==29-whilt||d==36-whilt)
+		{
+			htmlstr+="<tr></tr>"; 
+		}
+		
+
+		if(d == diwen)
+		{
+			htmlstr+="<td align=center>"+d+"</td>" ;	
+		}
+		else
+		{
+			htmlstr+="<td id=hey align=center >" + d +"</td>";
+			
+		}
+		i++;
+		
+	}
+	htmlstr+="</tr>";	
+	htmlstr+="</table>";
+	document.getElementById("show").innerHTML=htmlstr;
+
+</script>
+</html>

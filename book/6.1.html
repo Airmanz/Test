@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+#left{
+	/*background-image:url(images/left.jpg);*/
+	background-color:#03F;
+	background-repeat:no-repeat;
+	height:32px;
+	width:10px;
+}
+ul{
+	margin:0px;
+	padding:0px;
+	float:left;
+}
+li{
+	/*background-image:url(images/bg1.jpg);*/
+	background-color:#999;
+	background-repeat:no-repeat;
+	height:32px;
+	width:83px;
+	text-align:center;
+	line-height:35px;
+	font-size:14px;
+	color:#ffffff;
+	font-weight:bold;
+	list-style:none;
+	float:left;
+}
+</style>
+</head>
+
+<body>
+<ul>
+<li>首&nbsp;&nbsp;页</li>
+<li>家用电器</li>
+<li>手机数码</li>
+<li>日用百货</li>
+<li>书&nbsp;&nbsp;籍</li>
+<li>帮助中心</li>
+<li>免费开店</li>
+<li>全球咨询</li>
+</ul>
+</body>
+<script type="text/javascript">
+var len = document.getElementsByTagName("li");
+for(var i = 0; i < len.length; i++){
+	len[i].onmouseover = function(){
+		this.style.backgroundColor="#f00";
+		this.style.color="#000000";
+		this.style.fontSize="15px";
+	}
+	len[i].onmouseout = function(){
+		this.style.backgroundColor="#999";
+		this.style.color="#ffffff";
+		this.style.fontSize="14px";
+	}
+}
+</script>
+</html>
