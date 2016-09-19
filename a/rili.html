@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>日历</title>
+<script type="text/javascript">
+
+var day = 0, month = 0 , year = 0;
+n = new Date();
+day=n.getDay();
+date=n.getDate();
+year = n.getFullYear();//年
+month = n.getMonth()+1;//月
+var date = new Date();
+date.setDate(1); //获取每月的第一天
+firstday = date.getDay();
+switch(month){
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12: day = 31;break;
+	
+	case 4:
+	case 6:
+	case 9:
+	case 11:day = 30;break;
+	
+	case 2:
+	if((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
+		day = 29;break;
+	}
+	else{
+		day = 28;break;
+	}
+}
+diwen = n.getDate();
+var whilt = parseInt(firstday);
+function printf()
+{
+	var htmlstr="<table border='0' align=center>";
+	htmlstr+="</tr>";
+	htmlstr+="<td>日&nbsp;</td>";
+	htmlstr+="<td>一&nbsp;</td>";
+	htmlstr+="<td>二&nbsp;</td>";
+	htmlstr+="<td>三&nbsp;</td>";
+	htmlstr+="<td>四&nbsp;</td>";
+	htmlstr+="<td>五&nbsp;</td>";
+	htmlstr+="<td>六&nbsp;</td>";
+	htmlstr+="</tr>";
+	htmlstr+="<tr>";
+	for(var j = 0; j < whilt;j++)
+		{
+			htmlstr+="<td></td>"; 
+		}
+	for (var d = 1; d <= day; d++) {
+		var i = 1;
+		if(d==8-whilt||d==15-whilt||d==22-whilt||d==29-whilt||d==36-whilt)
+		{
+			htmlstr+="<tr></tr>"; 
+		}
+		
+
+		if(d == diwen)
+		{
+			htmlstr+="<td align=center>"+d+"</td>" ;	
+		}
+		else
+		{
+			htmlstr+="<td id=hey align=center >" + d +"</td>";
+			
+		}
+		i++;
+		
+	}
+	htmlstr+="</tr>";	
+	htmlstr+="</table>";
+	document.write(htmlstr);
+	document.getElementsByTagName('td')[0].style.backgroundColor = '#FFFF66'
+	
+	for(var i = 1; i<=6;i++)
+	{
+		document.getElementsByTagName('td')[i].style.backgroundColor = '#3399FF'
+	}
+	
+	var dangqian=whilt+6+diwen;
+	
+	for(var i = whilt+7;i<50;i++)
+	{
+		if(i == dangqian)
+		{
+			document.getElementsByTagName('td')[i].style.backgroundColor = '#FF9933';
+		}
+		else
+		{
+		document.getElementsByTagName('td')[i].style.backgroundColor = '#FFFFCC';
+		}
+	}
+}
+window.onload=printf;
+
+</script>
+</head>
+<body>
+</body>
+</html>
