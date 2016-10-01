@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>弹球游戏</title>
+<style type="text/css">
+body {
+	font-family: "宋体";
+	font-size: 12px;
+	background-color: #CCC;
+	margin: 0px;
+}
+#container {
+	width: 833px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	height:456px;
+	background-color:#fff;
+}
+li{
+	background-color:#F90;
+	background-repeat:no-repeat;
+	height:20px;
+	width:50px;
+	list-style:none;
+	float:left;
+	border: 1px solid #FFF;
+}
+#muban{
+	position:absolute;
+	top:440px;
+	width:100px;
+	height:16px;
+	left:500px;
+	background-color:#FF6;
+}
+#ball{
+	position:absolute;
+	top:424px;
+	width:16px;
+	height:16px;
+	left:584px;
+	background-color:#06F;
+}
+</style>
+</head>
+
+<body>
+
+<div id="container" onclick="place()" >
+<div id="ball"></div>
+</div>
+<div align="center">
+<br /><br />
+<input type="button" value="开始游戏" id="startBtn">
+</div>
+<div style="clear:both;"></div>
+
+</body>
+<script type="text/javascript">
+var str="";
+strhtml=str.innerHTML="";
+for(var i=0;i<32;i++){	
+	strhtml+="<li></li>"	
+}
+strhtml+="<div id='ball'></div>"
+strhtml+="<div id='muban'></div>"
+document.getElementById("container").innerHTML=strhtml;
+
+var muban=document.getElementById("muban");
+var ball = document.getElementById("ball");
+var startBtn=document.getElementById("startBtn");
+var stopBtn=document.getElementById("stopBtn");
+var forward1="up";
+var forward2="left";
+var game
+
+document.onkeydown=function(e)
+{
+	var e=e||event;
+	var keycode=e.keyCode || e.which;
+	if(keycode==37){
+		if(muban.offsetLeft<=270){
+		}
+		else{
+			muban.style.left=muban.offsetLeft - 10+"px";
+		}
+	}
+	if(keycode==39){
+		if(muban.offsetLeft>=1000){
+		}
+		else{
+			muban.style.left=muban.offsetLeft + 10 +"px";
+		}
+	}
+}
+
+
+startBtn.onclick=function()
+{	
+	var temp=2;
+	game = window.setInterval(function()
+	{
+		switch(forward1)
+		{
+			case "down" :
+			    ball.style.top = ball.offsetTop + temp + "px";
+				break;
+			case "up" :
+			    ball.style.top = ball.offsetTop - temp + "px";
+				break;
+			default :
+                ball.style.top = ball.offsetTop + temp + "px";
+				break;
+	   	}
+        if(ball.offsetTop + 16 == 440&&ball.offsetLeft<(muban.offsetLeft+100)&&ball.offsetLeft+16>(muban.offsetLeft))
+	    {
+			forward1="up";
+	    }
+		else if(ball.offsetTop < 0)
+		{
+			forward1="down";
+		}
+        switch(forward2)
+		{
+			case "right" :
+			    ball.style.left = ball.offsetLeft + temp + "px";
+				break;
+			case "left" :
+			    ball.style.left = ball.offsetLeft - temp + "px";
+				break;
+			default :
+                ball.style.left = ball.offsetLeft + temp + "px";
+				break;
+	   	}
+        if(ball.offsetLeft + 16 > 1103)
+	    {
+			forward2="left";
+	    }
+		else if(ball.offsetLeft < 270)
+		{
+			forward2="right";
+		}
+		else if(ball.offsetTop + 16 > 456)
+		{
+			window.clearInterval(game);
+			alert("Game Over!");
+			ball.style.display="none";
+		}
+	},10);
+	
+	
+}
+
+
+
+</script>
+</html>
