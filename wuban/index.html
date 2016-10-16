@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>舞伴配对</title>
+<script type="text/javascript">
+var males = [];
+var females = [];
+var maleNum=prompt("请输入男性的人数：","");
+var femaleNum=prompt("请输入女性的人数：","");
+for(var i = 0; i < maleNum; i++){
+	var m=prompt("请输入第"+(i+1)+"个男性的姓名：","");
+	males.push(m);
+}
+for(var i = 0; i < femaleNum; i++){
+	var f=prompt("请输入第"+(i+1)+"个女性的姓名：","");
+	females.push(f);
+}
+document.write("舞会开始,现在配对舞伴!"+"<br>");
+if(maleNum<femaleNum){
+	for(var i = 0; i < maleNum; i++){
+		x=males.shift();
+		y=females.shift();
+		document.write(x+"和"+y+"跳舞"+"<br>");
+		males.push(x);
+		females.push(y);
+	}
+	document.write("第一轮跳完了，没跳的接着第二轮"+"<br>");
+	for(var i = 0; i < femaleNum-maleNum;i++){
+		x=males.shift();
+		y=females.shift();
+		document.write(x+"和"+y+"跳舞"+"<br>");
+	}
+	document.write("所有人都跳完了！");
+	
+}else if(maleNum>femaleNum){
+	for(var i = 0; i < femaleNum; i++){
+		x=males.shift();
+		y=females.shift();
+		document.write(x+"和"+y+"跳舞"+"<br>");
+		males.push(x);
+		females.push(y);
+	}
+	document.write("第一轮跳完了，没跳的接着第二轮"+"<br>");
+	for(var i = 0; i < maleNum-femaleNum;i++){
+		x=males.shift();
+		y=females.shift();
+		document.write(x+"和"+y+"跳舞"+"<br>");
+	}
+	document.write("所有人都跳完了！");
+}else if(maleNum=femaleNum){
+	for(var i = 0; i < femaleNum; i++){
+		x=males.shift();
+		y=females.shift();
+		document.write(x+"和"+y+"跳舞"+"<br>");
+	}
+	document.write("所有人都跳完了！");
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>
