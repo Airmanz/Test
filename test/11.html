@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+var hang=parseInt(prompt("请输入图形的行数",""));
+if(isNaN(hang)){
+	document.write("非法输入！</br>");
+}
+var ban=parseInt(hang/2);
+for(var i = 0; i < hang ;i++){
+	for(var j = 0;j < hang; j++){
+		if(i==j){
+			document.write("<span style='color:#F00;'>&yen;</span>");
+		}else{
+			document.write("&yen;");
+		}
+	}
+			document.write("<br/>");
+}
+
+document.write("<br/>");
+document.write("<br/>");
+
+document.write("<div style='width:40px';>");
+document.write("<center>");
+for(var i = 0;i < hang ; i++){
+	if(i < ban){
+		for(var j = 0;j < hang-2*i;j++){
+			document.write("*");
+		}
+	}else{
+		for(var a = 0;a < i*2-hang+2;a++){
+			document.write("*");
+		}
+	}
+	document.write("<br/>");
+}
+document.write("</center>");
+document.write("<div>");
+
+document.write("<br/>");
+document.write("<br/>");
+
+var m = Math.ceil(hang/2);
+
+for(var i =0;i < 2*m-1;i++){
+	for(var j = 0 ;j < 2*m-1; j++){
+		document.write(p(i,j,m-1));
+	}
+	document.write("<br/>");
+}
+
+function p(x,y,m){
+	if(x>m){
+		x = 2*m -x;
+	}
+	if(y>m){
+		y = 2*m-y;
+	}
+	if(x+y==m){
+		return("<span style='color:#f00;'>&copy;<span>");
+	}
+	return("<span style='color:transparent;'>.<span>");
+
+}
+</script>
+<title>11</title>
+</head>
+
+<body>
+</body>
+</html>
