@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="js/jquery-1.6.js" type="text/javascript"></script>
+<script src="js/jquery.jqzoom-core-pack.js" type="text/javascript"></script>
+<link rel="stylesheet" href="css/jquery.jqzoom.css" type="text/css" />
+
+</head>
+
+<body>
+<a  id="img1" href="image/triumph_big1.jpg" class="jqzzom" style="" title="大图片标题">
+<img src="image/triumph_small1.jpg" width="308" height="247"  title="kawasakigreen" style="border:1px solid #666;"/>
+</a>
+</body>
+<script type="text/javascript">
+$(function(){
+	$("#img1").jqzoom(options);
+});
+var options = {
+	zoomWidth:300,
+	zoomHeight:200,
+	xOffset:10,
+	yOffset:0,
+	position:"right",
+	title:true,
+	lens:true,
+	showEffect:"fadein",
+	hideEffect:"hide",
+	fadeinSpeed:"slow",
+	fadeoutSpeed:"fast",
+};
+</script> 
+</html>
